@@ -1,0 +1,9 @@
+.reviews .card-deck{
+    border-color: transparent;
+    margin: 5px;
+}
+
+.reviews .card-deck .card-footer{
+    background: transparent;
+    border: 0;
+}

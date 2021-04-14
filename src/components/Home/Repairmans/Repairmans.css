@@ -1,0 +1,9 @@
+.repairman .card-deck{
+    border-color: transparent;
+    margin: 5px;
+}
+
+.repairman .card-deck .card-footer{
+    background: transparent;
+    border: 0;
+}
