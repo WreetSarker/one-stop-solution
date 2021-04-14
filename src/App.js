@@ -6,8 +6,12 @@ import {
   Route,
 } from "react-router-dom";
 import './App.css';
+import AddService from "./components/AddService/AddService";
+import CheckOut from "./components/Checkout/Checkout/Checkout";
 import Home from "./components/Home/Home/Home";
 import Login from "./components/Login/Login/Login";
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute'
+import MyServices from "./components/MyServices/MyServices";
 
 export const UserContext = createContext();
 
@@ -26,6 +30,15 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
+          <PrivateRoute path="/checkout/:id">
+            <CheckOut></CheckOut>
+          </PrivateRoute>
+          <PrivateRoute path="/addService">
+            <AddService></AddService>
+          </PrivateRoute>
+          <PrivateRoute path="/myservices">
+            <MyServices></MyServices>
+          </PrivateRoute>
         </Switch>
       </Router>
 
