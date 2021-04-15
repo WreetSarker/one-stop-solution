@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../App';
+import ProcessPayment from '../ProcessPayment/ProcessPayment';
 
 
 const CheckOut = () => {
@@ -21,6 +22,8 @@ const CheckOut = () => {
                 boughtService.serviceName = data[0].name;
                 boughtService.cost = data[0].cost;
                 setLoggedInUser(boughtService);
+                console.log(loggedInUser);
+                console.log(boughtService);
                 fetch('http://localhost:4000/boughtService', {
                     method: 'POST',
                     headers: {
@@ -37,6 +40,7 @@ const CheckOut = () => {
             <h1>Checkout</h1>
             <h3>Ordered Service: {item.name}</h3>
             <h4>Cost: {item.cost}</h4>
+            <ProcessPayment></ProcessPayment>
             <Link to="/myservices"><button>CheckOut</button></Link>
 
         </div>

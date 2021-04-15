@@ -1,0 +1,21 @@
+.orders-holder{
+    display: flex;
+    justify-content: flex-start;
+    border: 3px solid gray;
+    margin: 8px;
+    border-radius: 15px;
+    width: 70%;
+    background: rgb(226, 214, 214);
+    font-size: medium;
+}
+.img-container img{
+    height: 100%;
+    width: 150px;
+    margin-right: 10px;
+    border-radius: 15px;
+}
+.info{
+    text-align: left;
+    margin-top: 0;
+    
+}

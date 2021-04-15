@@ -6,6 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import './App.css';
+import AddReview from "./components/AddReview/AddReview";
 import AddService from "./components/AddService/AddService";
 import CheckOut from "./components/Checkout/Checkout/Checkout";
 import Home from "./components/Home/Home/Home";
@@ -38,6 +39,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/myservices">
             <MyServices></MyServices>
+          </PrivateRoute>
+          <PrivateRoute path="/addReview">
+            <AddReview></AddReview>
           </PrivateRoute>
         </Switch>
       </Router>

@@ -23,6 +23,16 @@ const Login = () => {
 
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
+    const setUserToken = () => {
+        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function (idToken) {
+            // Send token to your backend via HTTPS
+            // ...
+            sessionStorage.setItem('token', idToken)
+        }).catch(function (error) {
+            // Handle error
+        });
+    }
+
     const handleGoogleSignIn = () => {
         firebase.auth()
             .signInWithPopup(googleProvider)
@@ -30,6 +40,7 @@ const Login = () => {
                 const credential = result.credential;
                 const token = credential.accessToken;
                 const user = result.user;
+                setUserToken()
                 setLoggedInUser(user);
                 history.replace(from);
             }).catch((error) => {

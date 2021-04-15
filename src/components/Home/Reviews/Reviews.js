@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Review from '../Review/Review';
 import './Reviews.css';
 import customer1 from '../../../images/customer1.png'
@@ -29,6 +29,15 @@ const reviewsData = [
 ]
 
 const Reviews = () => {
+
+    const [reviews, setReviews] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:4000/reviews')
+            .then(resp => resp.json())
+            .then(data => setReviews(data))
+    }, [])
+
     return (
         <section className="reviews my-5 py-5">
             <div className="container">
@@ -38,7 +47,7 @@ const Reviews = () => {
                 </div>
                 <div className="card-deck mt-5 row d-flex justify-content-center">
                     {
-                        reviewsData.map(review => <Review review={review} key={review.name}></Review>)
+                        reviews.map(review => <Review review={review} key={review._id}></Review>)
                     }
                 </div>
             </div>
