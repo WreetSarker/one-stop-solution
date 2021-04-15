@@ -23,7 +23,7 @@ const NavBar = () => {
                             <Link className="nav-link ms-5 text-info" to="/review">Review</Link>
                         </li>
                         <li class="nav-item">
-                            <Link className="nav-link ms-5 text-info" to="/admin">Admin</Link>
+                            <Link className="nav-link ms-5 text-info" to="/dashboard">Admin</Link>
                         </li>
 
                         <li class="nav-item">

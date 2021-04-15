@@ -6,9 +6,12 @@ import {
   Route,
 } from "react-router-dom";
 import './App.css';
+import AddAdmin from "./components/AddAdmin/AddAdmin";
 import AddReview from "./components/AddReview/AddReview";
 import AddService from "./components/AddService/AddService";
 import CheckOut from "./components/Checkout/Checkout/Checkout";
+import AllServices from "./components/Dashboard/AllServices/AllServices";
+import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import Home from "./components/Home/Home/Home";
 import Login from "./components/Login/Login/Login";
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute'
@@ -42,6 +45,15 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/addReview">
             <AddReview></AddReview>
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard">
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+          <PrivateRoute path="/allBoughtServices">
+            <AllServices></AllServices>
+          </PrivateRoute>
+          <PrivateRoute path="/addAdmin">
+            <AddAdmin></AddAdmin>
           </PrivateRoute>
         </Switch>
       </Router>

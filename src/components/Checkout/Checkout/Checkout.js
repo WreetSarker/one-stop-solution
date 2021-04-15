@@ -14,7 +14,7 @@ const CheckOut = () => {
             .then(resp => resp.json())
             .then(data => {
                 setItem(data[0]);
-                const boughtService = { ...data[0] };
+                const boughtService = {};
                 boughtService.name = loggedInUser.name || loggedInUser.displayName;
                 boughtService.date = new Date().toDateString('dd/MM/yyyy');
                 boughtService.email = loggedInUser.email;
@@ -22,8 +22,6 @@ const CheckOut = () => {
                 boughtService.serviceName = data[0].name;
                 boughtService.cost = data[0].cost;
                 setLoggedInUser(boughtService);
-                console.log(loggedInUser);
-                console.log(boughtService);
                 fetch('http://localhost:4000/boughtService', {
                     method: 'POST',
                     headers: {

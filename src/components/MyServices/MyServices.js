@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../App';
 import BoughtService from '../BoughtService/BoughtService';
+import Sidebar from '../Dashboard/Sidebar/Sidebar';
 
 const MyServices = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -14,10 +15,13 @@ const MyServices = () => {
 
     return (
         <div>
-            <h1>These are {loggedInUser.displayName || loggedInUser.name}'s products</h1>
-            {
-                boughtServices.map(service => <BoughtService service={service}></BoughtService>)
-            }
+            <Sidebar></Sidebar>
+            <div style={{ marginLeft: '400px' }}>
+                <h1>These are {loggedInUser.displayName || loggedInUser.name}'s products</h1>
+                {
+                    boughtServices.map(service => <BoughtService service={service}></BoughtService>)
+                }
+            </div>
         </div>
     );
 };
