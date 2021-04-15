@@ -10,7 +10,7 @@ const CheckOut = () => {
     const { id } = useParams();
     const [item, setItem] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:4000/getSingleService/${id}`)
+        fetch(`https://still-woodland-13455.herokuapp.com/getSingleService/${id}`)
             .then(resp => resp.json())
             .then(data => {
                 setItem(data[0]);
@@ -22,7 +22,7 @@ const CheckOut = () => {
                 boughtService.serviceName = data[0].name;
                 boughtService.cost = data[0].cost;
                 setLoggedInUser(boughtService);
-                fetch('http://localhost:4000/boughtService', {
+                fetch('https://still-woodland-13455.herokuapp.com/boughtService', {
                     method: 'POST',
                     headers: {
                         'Content-type': 'application/json'

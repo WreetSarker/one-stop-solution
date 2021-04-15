@@ -8,7 +8,7 @@ const MyServices = () => {
     const [boughtServices, setBoughtServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:4000/getBoughtServices?email=' + loggedInUser.email)
+        fetch('https://still-woodland-13455.herokuapp.com/getBoughtServices?email=' + loggedInUser.email)
             .then(resp => resp.json())
             .then(data => setBoughtServices(data))
     }, [])

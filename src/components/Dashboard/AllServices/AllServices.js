@@ -6,7 +6,7 @@ const AllServices = () => {
     const [services, setServices] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:4000/allBoughtServices')
+        fetch('https://still-woodland-13455.herokuapp.com/allBoughtServices')
             .then(resp => resp.json())
             .then(data => setServices(data))
     }, [])
@@ -14,7 +14,7 @@ const AllServices = () => {
     return (
         <div>
             <Sidebar></Sidebar>
-            <div style={{ marginLeft: '300px' }}>
+            <div style={{ marginLeft: '500px' }}>
                 <h2 className="text-brand text-center">All Services</h2>
                 {
                     services.length ?
